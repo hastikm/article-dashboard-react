@@ -1,0 +1,20 @@
+.Card{
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin: 20px;
+  transition: all 0.5s;
+}
+
+.Card:hover{
+  scale: 1.05;
+}
+
+.read-more{
+  margin-left: 5px;
+ 
+}
+
+.read-more:hover{
+  color: rgb(255, 45, 115);
+   cursor: pointer;
+}

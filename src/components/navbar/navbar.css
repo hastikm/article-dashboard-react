@@ -1,0 +1,13 @@
+.active{
+
+  border-bottom: 2px solid rgb(37, 35, 35);
+}
+
+.nav-link {
+  text-decoration: none; /* حذف خط زیر لینک */
+  color: #333; /* رنگ پیش‌فرض */
+  font-size: 18px;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+

@@ -12,9 +12,9 @@ function Mynavbar() {
   return(
 
     
- <Navbar key={expand} expand={expand} className="bg-body-tertiary mb-3">
+ <Navbar style={{backgroundColor: 'rgb(236, 187, 49)'}} key={expand} expand={expand} className="mb-3">
           <Container >
-            <Navbar.Brand href="#">بلاگ هوش مصنوعی </Navbar.Brand>
+            <Navbar.Brand  className='lalezar'>بلاگ هوش مصنوعی </Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
@@ -28,9 +28,9 @@ function Mynavbar() {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <NavLink className='nav-linl'>صفحه اصلی</NavLink>
-                  <NavLink className='nav-linl'>ساخت مقاله </NavLink>
-                  <NavLink className='nav-linl'>درباره ما </NavLink>  
+                  <NavLink to='/' className='nav-link'>صفحه اصلی</NavLink>
+                  <NavLink to='/addarticle' className='nav-link'>ساخت مقاله </NavLink>
+                  <NavLink to='/about' className='nav-link'>درباره ما </NavLink>  
                 </Nav>
             
               </Offcanvas.Body>

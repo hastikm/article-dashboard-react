@@ -1,9 +1,10 @@
-import Button from 'react-bootstrap/Button';
+import { NavLink } from 'react-router-dom';
+
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
+
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
 function Mynavbar() {
@@ -18,7 +19,7 @@ function Mynavbar() {
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
-              placement="end"
+              placement="سفشقف"
             >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
@@ -29,19 +30,9 @@ function Mynavbar() {
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                   <NavLink className='nav-linl'>صفحه اصلی</NavLink>
                   <NavLink className='nav-linl'>ساخت مقاله </NavLink>
-                  <NavLink className='nav-linl'>درباره ما </NavLink>
-               
-                     
+                  <NavLink className='nav-linl'>درباره ما </NavLink>  
                 </Nav>
-                <Form className="d-flex">
-                  <Form.Control
-                    type="search"
-                    placeholder="Search"
-                    className="me-2"
-                    aria-label="Search"
-                  />
-                  <Button variant="outline-success">Search</Button>
-                </Form>
+            
               </Offcanvas.Body>
             </Navbar.Offcanvas>
           </Container>

@@ -6,29 +6,27 @@ import axios from "axios";
 import { useState } from "react";
 
 function Addarticle() {
-  const [Titelstate , setTitelstate] = useState()
+  const [formData , setformData] = useState({})
+
+  const formHandler = (e , propertyName) =>{
+
+    setformData({...formData , [propertyName] : e.target.value})
+  }
 
   const addArticleHandler = () =>{
 
-    axios.post("http://localhost:5000/articles" , {
-      desc :"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است ",
-       image :"https://dl.next1code.ir/images/react/article2.webp",
-      readingTime :"18",
-      "category":" وب ",
-      "wrriter":"هستی   "
-    }) 
+  axios.post("http://localhost:5000/articles" , formData)
   }
 
-  const titelHandler = (e) =>{
-    setTitelstate(e.target.value)
-  }
+ 
+
   return(
 <>
 <Mynavbar/>
 <div className="formcontainer yekan">
  <Form.Label htmlFor="inputPassword5">عنوان مقاله</Form.Label>
       <Form.Control
-      onChange={titelHandler} 
+      onChange={(e) => formHandler(e , "category")} 
         type="text"
         id="inputPassword5"
         aria-describedby="passwordHelpBlock"
@@ -36,6 +34,7 @@ function Addarticle() {
       />
  <Form.Label htmlFor="inputPassword5">توضیح کوتاه </Form.Label>
       <Form.Control
+      onChange={(e) => formHandler(e , "desc")} 
         type="text"
         id="inputPassword5"
         aria-describedby="passwordHelpBlock"
@@ -43,6 +42,7 @@ function Addarticle() {
       />
  <Form.Label htmlFor="inputPassword5"> نویسنده مقاله</Form.Label>
       <Form.Control
+      onChange={(e) => formHandler(e , "wrriter")} 
         type="text"
         id="inputPassword5"
         aria-describedby="passwordHelpBlock"
@@ -50,6 +50,7 @@ function Addarticle() {
       />
  <Form.Label htmlFor="inputPassword5">عکس مقاله</Form.Label>
       <Form.Control
+      onChange={(e) => formHandler(e , "image")} 
         type="text"
         id="inputPassword5"
         aria-describedby="passwordHelpBlock"
@@ -58,7 +59,8 @@ function Addarticle() {
 
  <Form.Label htmlFor="inputPassword5"> مدت زمان خواندن</Form.Label>
      
-    <Form.Control type="number" min={1} max={120} step={1} />
+    <Form.Control onChange={(e) => formHandler(e , "readingTime")} 
+       type="number" min={1} max={120} step={1} />
           <Button onClick={addArticleHandler} style={{marginTop:"20px"}} variant="primary" type="button">
         ساخت مقاله
       </Button>

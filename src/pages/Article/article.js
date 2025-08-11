@@ -1,7 +1,7 @@
 
 import axios from "axios";
 import { useEffect } from "react";
-import { useParams  } from "react-router-dom";
+import { useNavigate, useParams  } from "react-router-dom";
 import { useState} from "react";
 import { Container , Row , Col } from "react-bootstrap";
 import Mynavbar from "../../components/navbar/navbar";
@@ -11,17 +11,51 @@ import { TbCategory } from "react-icons/tb";
 import Button from "react-bootstrap/Button";
 import { MdDelete } from "react-icons/md";
 import { MdOutlineEditCalendar } from "react-icons/md";
+import '../Article/article.css';
+import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 function Article() {
   const articleId = useParams().articleId
   const [articleData, setArticleData] = useState();
+  const navigate = useNavigate()
 
   useEffect(()=> {
-    axios.get(`http://localhost:5001/articles/${articleId}`)
-    .then(response => console.log(response))
+    axios.get(`http://localhost:4001/articles/${articleId}`)
+    .then(response => setArticleData(response.data))
   }, [])
-  
 
+
+
+  const deletArticleId = (id) =>{
+
+    
+Swal.fire({
+  title: "آیا مطمئن به حذف هستید؟",
+  icon: "warning",
+  showCancelButton: true,
+  confirmButtonColor: "#3085d6",
+  cancelButtonColor: "#d33",
+  confirmButtonText: "بله حذف شود!"
+}).then((result) => {
+  if (result.isConfirmed) {
+    Swal.fire({
+      title: "حذف شد!",
+      icon: "success"
+    });
+    
+     axios.delete(`http://localhost:4001/articles/${id}`)
+     navigate('/')
+  }
+});
+
+  }
+
+
+  
+ if (!articleData) {
+    return <p>در حال بارگذاری مقاله...</p>;
+  }
   return(
 <>
 
@@ -30,31 +64,35 @@ function Article() {
   <Row>
     <Col lg={4}>
     <div className="articleCardContainer">
-      <div className="CardHeder"><img src="https://dl.next1code.ir/images/react/article8.webp" style={{ maxWidth: '100%', height: 'auto', display: 'block' }} />
-        <h1>عنوان مقاله</h1>
+      <div className="CardHeder"><img src={articleData.image} style={{ maxWidth: '100%', height: 'auto', display: 'block' }} />
+        <h1> {articleData.category}</h1>
       </div>
       <div className="CardBody">
         <p>
 <TfiWrite fontSize={'20px'} />
-نویسنده:<b>میلاد</b>
+نویسنده:<b>{articleData.wrriter}</b>
         </p>
         
         <p>
 <IoTimeSharp fontSize={'20px'}/>
-مدت زمان مطالعه:<b>20دقیقه</b>
+مدت زمان مطالعه:<b>{articleData.readingTime}دقیقه</b>
         </p>
 
         <p>
 <TbCategory fontSize={'20px'}/>
-دسته بندی  :<b>20دقیقه</b>
+دسته بندی  :<b>{articleData.category}</b>
         </p>
 
 
       
       </div>
       <div className="CardFooter">
-          <Button variant="outline-danger"  size={'25px'}>حذف مقاله<MdDelete fontSize={'20px'}/></Button>
-          <Button variant="outline-primary" size={'25px'}> ویرایش مقاله<MdOutlineEditCalendar fontSize={'20px'}/></Button>
+        <Button variant="outline-danger" onClick={(e)=>deletArticleId(articleId)}  size={'25px'}>حذف مقاله<MdDelete fontSize={'20px'}/></Button>
+        <Link to={`/editarticle/${articleId}`}>
+                  
+          <Button variant="outline-primary"  size={'25px'}> ویرایش مقاله<MdOutlineEditCalendar fontSize={'20px'}/></Button>
+        </Link>
+
       </div>
     </div>
 

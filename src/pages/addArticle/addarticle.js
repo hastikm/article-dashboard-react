@@ -7,6 +7,8 @@ import { useState } from "react";
 import  Swal  from "sweetalert2";
 
 
+
+
 function Addarticle() {
 const [formData, setFormData] = useState({
   category: "",
@@ -43,7 +45,7 @@ const addArticleHandler = () => {
     return; // ادامه نده
   }
 
-  axios.post("http://localhost:5000/articles", formData)
+  axios.post("http://localhost:4001/articles", formData)
     .then(response => {
       if (response.status === 201) {
         Swal.fire({

@@ -11,7 +11,7 @@ const [articles , setArticles] = useState([])
 
 useEffect(()=>{
   axios
-  .get("http://localhost:5000/articles")
+  .get("http://localhost:4001/articles")
   .then((response) => setArticles(response.data))
 } , []);
 

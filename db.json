@@ -49,11 +49,11 @@
       "wrriter": "میلاد "
     },
     {
-      "id": "7",
-      "desc": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و بک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لاز  ",
+      "id": "6",
+      "desc": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است ",
       "image": "https://dl.next1code.ir/images/react/article7.webp",
-      "readingTime": "8",
-      "category": " UI/UX",
+      "readingTime": "25",
+      "category": " NLP",
       "wrriter": "میلاد "
     },
     {
@@ -65,28 +65,12 @@
       "wrriter": "میلاد "
     },
     {
-      "id": "4f29",
-      "category": "یبیب",
-      "desc": "بیبب",
-      "wrriter": "بی",
-      "image": "یبی",
-      "readingTime": "34"
-    },
-    {
-      "id": "b059",
-      "category": "dhg",
-      "desc": "dg",
-      "wrriter": "dg",
-      "image": "dg",
-      "readingTime": "32"
-    },
-    {
-      "id": "009a",
-      "category": "بی",
-      "desc": "بی",
-      "wrriter": "دد",
-      "image": "یس",
-      "readingTime": "22"
+      "id": "391c",
+      "category": "عنوان مقاله نهم",
+      "desc": "توضیح کوتاه",
+      "wrriter": "هستی",
+      "image": "https://dl.next1code.ir/images/react/article6.webp",
+      "readingTime": "20"
     }
   ]
 }

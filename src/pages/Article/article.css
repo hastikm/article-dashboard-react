@@ -1,0 +1,19 @@
+.articleCardContainer{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 20px;
+  width: auto;
+}
+
+.articleCardContainer h1{
+  font-size: 20px;
+  text-align: center;
+  margin: 20px;
+}
+
+.CardBody{
+  margin: 10px 0;
+}
+
+.CardFooter button{
+  margin-right: 2px;
+}

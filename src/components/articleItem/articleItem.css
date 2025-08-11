@@ -18,3 +18,8 @@
   color: rgb(255, 45, 115);
    cursor: pointer;
 }
+
+.Card a{
+  text-decoration: none;
+  color: black;
+}

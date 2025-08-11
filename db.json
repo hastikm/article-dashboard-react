@@ -63,6 +63,30 @@
       "readingTime": "15",
       "category": " تعامل انسان و کامپیوتر",
       "wrriter": "میلاد "
+    },
+    {
+      "id": "4f29",
+      "category": "یبیب",
+      "desc": "بیبب",
+      "wrriter": "بی",
+      "image": "یبی",
+      "readingTime": "34"
+    },
+    {
+      "id": "b059",
+      "category": "dhg",
+      "desc": "dg",
+      "wrriter": "dg",
+      "image": "dg",
+      "readingTime": "32"
+    },
+    {
+      "id": "009a",
+      "category": "بی",
+      "desc": "بی",
+      "wrriter": "دد",
+      "image": "یس",
+      "readingTime": "22"
     }
   ]
 }

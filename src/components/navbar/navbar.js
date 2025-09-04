@@ -30,7 +30,7 @@ function Mynavbar() {
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                   <NavLink to='/' className='nav-link'>صفحه اصلی</NavLink>
                   <NavLink to='/addarticle' className='nav-link'>ساخت مقاله </NavLink>
-                  <NavLink to='/about' className='nav-link'>درباره ما </NavLink>  
+            
                 </Nav>
             
               </Offcanvas.Body>
